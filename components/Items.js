@@ -48,4 +48,3 @@ class Items extends Component {
 }
 
 export default Items;
-export { ALL_ITEMS_QUERY };
