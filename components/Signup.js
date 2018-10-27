@@ -21,66 +21,59 @@ class Signup extends Component {
     email: '',
   };
 
-  saveToState(e) {
+  saveToState = e => {
     this.setState({
-      [e.target.name]:e.tartget.value,
+      [e.target.name]:e.target.value,
     })   
   };
 
   render() {
     return (
       <Mutation mutation={SIGNUP_MUTATION} variables= {this.state}>
-        {(signup, { error, loading }) => (
-
-     
-      <Form method="post" onSubmit={async e => {
-        e.preventDefault();
-        await signup();
-        this.setState({name: "", email: "", password: "",})
-      }}>         
-        <fieldset disabled={loading} aria-busy={loading}>
-          <h2>Sign up for Account</h2>
-          <Error error={error} />
-          <label htmlFor="email">
-            Email
-            <input 
-              type="email"
-              name="email"
-              placeholder="e-mail"
-              value={this.state.email}
-              onChange={this.saveToState}
-            />
-          </label>
-          <label htmlFor="name">
-            Name
-            <input 
-              type="text"
-              name="name"
-              placeholder="name"
-              value={this.state.name}
-              onChange={this.saveToState}
-            />
-          </label>
-          <label htmlFor="password">
-            Password
-            <input 
-              type="password"
-              name="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.saveToState}
-            />
-          </label>
-          
-          
-          
-         
-        </fieldset>
-
-
-      </Form>
-    )}
-         </Mutation>
+        {(signup, { error, loading }) => (     
+          <Form method="post" onSubmit={async e => {
+            e.preventDefault();
+            await signup();
+            this.setState({name: "", email: "", password: "",})
+          }}>         
+            <fieldset disabled={loading} aria-busy={loading}>
+              <h2>Sign up for Account</h2>
+              <Error error={error} />
+              <label htmlFor="email">
+                Email
+                <input 
+                  type="email"
+                  name="email"
+                  placeholder="e-mail"
+                  value={this.state.email}
+                  onChange={this.saveToState}
+                />            
+              </label>
+              <label htmlFor="name">
+                Name
+                <input 
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  value={this.state.name}
+                  onChange={this.saveToState}
+                />            
+              </label>
+              <label htmlFor="password">
+                Password
+                <input 
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  value={this.state.password}
+                  onChange={this.saveToState}
+                />
+              </label>
+            </fieldset>
+            <button type="submit">Submit</button>
+          </Form>
+        )}
+      </Mutation>
     )
   }
 }

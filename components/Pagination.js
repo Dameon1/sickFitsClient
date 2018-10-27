@@ -16,46 +16,45 @@ const PAGINATION_QUERY = gql`
     }
   }
 `;
+
 const Pagination = props => (
-  
-    <Query query={PAGINATION_QUERY}>
+  <Query query={PAGINATION_QUERY}>
     {({data, loading, error}) => {
       const count = data.itemsConnection.aggregate.count
       const pages = Math.ceil(count/perPage);
       const page = props.page;
       if(loading) return <p>Loading ...</p>
       if(error) return <Error error={error} />
-      
-     return (
-      <PaginationStyles>
-        <Head>
-          <title>
-            Sick Fits! Page {page} of {pages}
-          </title>
-        </Head>
-        <Link prefetch href={{
-          pathname: 'items',
-          query: { page: page- 1 },
-        }}>
-          <a className='prev' aria-disabled={page <= 1}>← Prev</a>
-        </Link>
-        <p>
-          Page {page} of {pages}!
-        </p>
-        <p>
-          {count} Items Total
-        </p>
-        <Link prefetch href={{
-          pathname: 'items',
-          query: { page: page + 1 },
-        }}>
-          <a className='prev' aria-disabled={page >= pages}>Next ➝</a>
-        </Link>
-      </PaginationStyles>
-     )
+     
+      return (
+        <PaginationStyles>
+          <Head>
+            <title>
+              Sick Fits! Page {page} of {pages}
+            </title>
+          </Head>
+          <Link prefetch href={{
+            pathname: 'items',
+            query: { page: page- 1 },
+            }}>
+            <a className='prev' aria-disabled={page <= 1}>← Prev</a>
+          </Link>
+          <p>
+            Page {page} of {pages}!
+          </p>
+          <p>
+            {count} Items Total
+          </p>
+          <Link prefetch href={{
+            pathname: 'items',
+            query: { page: page + 1 },
+          }}>
+            <a className='prev' aria-disabled={page >= pages}>Next ➝</a>
+          </Link>
+        </PaginationStyles>
+      )
     }}
-    </Query>    
-  
-)
+  </Query>    
+);
 
 export default Pagination;
