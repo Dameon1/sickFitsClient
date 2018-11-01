@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import { adopt } from 'react-adopt';
 import CartStyles from './styles/CartStyles';
 import Supreme from './styles/Supreme';
 import CloseButton from './styles/CloseButton';
@@ -21,16 +22,20 @@ const TOGGLE_CART_MUTATION = gql`
     toggleCart @client
   }
 `;
+//use "Composed" for deep neste Render props *important
+const Composed = adopt({
+  user: ({ render }) => <User>{render}</User>,
+  toggleCart: ({ render }) => <Mutation mutation={TOGGLE_CART_MUTATION}>{render}</Mutation>,
+  localState : ({ render }) => <Query query={LOCAL_STATE_QUERY}>{render}</Query>,
+})
 
 const Cart = () => (
-  <User>{({ data: { me }}) => {
+  <Composed>{({ user, toggleCart, localState }) => {
+    const me = user.data.me;
     if(!me) return null;
-    return (
-  <Mutation mutation={TOGGLE_CART_MUTATION}>
-    {toggleCart => (
-    <Query query={LOCAL_STATE_QUERY}>
-      {({ data }) => (
-    <CartStyles open={data.cartOpen}>
+    return (  
+    
+    <CartStyles open={localState.data.cartOpen}>
       <header>
         <CloseButton onClick={toggleCart} title="close">&times;</CloseButton>
         <Supreme>{me.name}'s Cart</Supreme>
@@ -45,13 +50,10 @@ const Cart = () => (
         <SickButton>Checkout</SickButton>
       </footer>
     </CartStyles>
-      )}
-      </Query>
-      )}
-    
-    </Mutation>
+     
+      
     )
-  }}</User>
+  }}</Composed>
 )
 export default Cart;
 export { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION };
