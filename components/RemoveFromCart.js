@@ -30,7 +30,7 @@ class RemoveFromCart extends React.Component {
   }
 
   update = (cache, payload) => {
-    const date = cache.readQuery({
+    const data = cache.readQuery({
       query: CURRENT_USER_QUERY
     });
     const cartItemId = payload.data.removeFromCart.id;
