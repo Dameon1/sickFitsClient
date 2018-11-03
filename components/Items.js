@@ -54,7 +54,7 @@ class Items extends Component {
       </Center>
     );
   }
-}
+};
 
 export default Items;
 export { ALL_ITEMS_QUERY };

@@ -25,7 +25,7 @@ const CartItem = ({ cartItem }) => {
         <p>This Item has been removed</p>
         <RemoveFromCart id={cartItem.id}/>
       </CartItemStyles>
-  );
+    );
   return ( 
     <CartItemStyles>
       <img  width="50" src={cartItem.item.image} alt={cartItem.item.title} />

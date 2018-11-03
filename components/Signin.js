@@ -68,10 +68,10 @@ class Signin extends Component {
             </fieldset>
             <button type="submit">Sign In</button>
           </Form>
-        )}
+        )};
       </Mutation>
-    )
-  }
-}
+    );
+  };
+};
 
 export default Signin;

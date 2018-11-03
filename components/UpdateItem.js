@@ -23,19 +23,18 @@ const UPDATE_ITEM_MUTATION = gql`
     $id: ID!
     $title: String
     $description: String
-    $price: Int  
-  ) {
-    updateItem(
+    $price: Int
+    ) {
+    updateItem (
       title: $title,
       description: $description,
       price: $price,
       id: $id,
-     
-    ) {
-      id
-      title
-      description
-      price
+      ) {
+        id
+        title
+        description
+        price
     }
   }
 `;
@@ -47,7 +46,6 @@ class UpdateItem extends Component {
     const val = type === 'number' ? parseFloat(value) : value;
     this.setState({ [name]: val });
   };
-
   updateItem = async (e,updateItemMutation) => {
     e.preventDefault();
     console.log('updating');

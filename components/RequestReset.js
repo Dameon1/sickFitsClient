@@ -4,7 +4,6 @@ import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
 
-
 const REQUEST_RESET_MUTATION = gql`
   mutation REQUEST_RESET_MUTATION($email: String!){
     requestReset(email: $email) {
@@ -51,13 +50,12 @@ class RequestReset extends Component {
                 />            
               </label>
               <button type="submit">Request Reset</button>
-            </fieldset>
-            
+            </fieldset>            
           </Form>
         )}
       </Mutation>
-    )
-  }
-}
+    );
+  };
+};
 
 export default RequestReset;

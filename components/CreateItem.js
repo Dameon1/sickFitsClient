@@ -34,32 +34,30 @@ class CreateItem extends Component {
     largeImage: '',
     price:0,
   };
+
   handleChange = e => {
     const { name, type, value } = e.target;
     const val = type === 'number' ? parseFloat(value) : value;
     this.setState({ [name]: val });
   };
-  
+
   uploadFile = async e => {
     console.log('Uploading file');
     const files =e.target.files;
     const data = new FormData();
     data.append('file', files[0]);
     data.append('upload_preset', 'sickfits');
-
-    const res = await fetch('https://api.cloudinary.com/v1_1/dameon1/image/upload',{
+    const res = await fetch('https://api.cloudinary.com/v1_1/dameon1/image/upload', {
       method:'POST',
       body: data,
     });
-    const file = await res.json();
-    console.log(file);
-    
+    const file = await res.json();    
     this.setState({
       image: file.secure_url,
       largeImage: file.eager[0].secure_url
-    })
+    });
+  };
 
-  }
   render() {
     return (
       <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
@@ -104,7 +102,6 @@ class CreateItem extends Component {
                   onChange={this.handleChange}
                 />
               </label>
-
               <label htmlFor="price">
                 Price
                 <input
@@ -117,7 +114,6 @@ class CreateItem extends Component {
                   onChange={this.handleChange}
                 />
               </label>
-
               <label htmlFor="description">
                 Description
                 <textarea
@@ -135,8 +131,8 @@ class CreateItem extends Component {
         )}
       </Mutation>
     );
-  }
-}
+  };
+};
 
 export default CreateItem;
 export { CREATE_ITEM_MUTATION };

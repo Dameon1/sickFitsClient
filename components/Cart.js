@@ -23,7 +23,8 @@ const TOGGLE_CART_MUTATION = gql`
     toggleCart @client
   }
 `;
-//use "Composed" for deep neste Render props *important
+
+//use "Composed" for deeply nesting Render props { QUERY-MUTATION-SUBSCRIPTION }*important
 const Composed = adopt({
   user: ({ render }) => <User>{render}</User>,
   toggleCart: ({ render }) => <Mutation mutation={TOGGLE_CART_MUTATION}>{render}</Mutation>,
@@ -34,32 +35,30 @@ const Cart = () => (
   <Composed>{({ user, toggleCart, localState }) => {
     const me = user.data.me;
     if(!me) return null;
-    return (  
-    
-    <CartStyles open={localState.data.cartOpen}>
-      <header>
-        <CloseButton onClick={toggleCart} title="close">&times;</CloseButton>
-        <Supreme>{me.name}'s Cart</Supreme>
-        <p>You have {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart.</p>
-      </header>
-      <ul>
-        {me.cart.map(cartItem => 
-        <CartItem cartItem={cartItem} key={cartItem.id}/>)}
-      </ul>
-      <footer>
-        <p>{formatMoney(calcTotalPrice(me.cart))}</p>
-        { me.cart.length &&
-          <TakeMyMoney>
-            <SickButton>Checkout</SickButton>
-          </TakeMyMoney>
-        }
-      </footer>
-    </CartStyles>
-     
-      
+    return (    
+      <CartStyles open={localState.data.cartOpen}>
+        <header>
+          <CloseButton onClick={toggleCart} title="close">&times;</CloseButton>
+          <Supreme>{me.name}'s Cart</Supreme>
+          <p>You have {me.cart.length} Item{me.cart.length === 1 ? '' : 's'} in your cart.</p>
+        </header>
+        <ul>
+          {me.cart.map(cartItem => 
+          <CartItem cartItem={cartItem} key={cartItem.id}/>)}
+        </ul>
+        <footer>
+          <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+          { me.cart.length &&
+            <TakeMyMoney>
+              <SickButton>Checkout</SickButton>
+            </TakeMyMoney>
+          }
+        </footer>
+      </CartStyles>     
     )
-  }}</Composed>
-)
+  }}
+  </Composed>
+);
+
 export default Cart;
 export { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION };
-

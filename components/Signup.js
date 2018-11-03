@@ -21,7 +21,6 @@ class Signup extends Component {
     password: '',
     email: '',
   };
-
   saveToState = e => {
     this.setState({
       [e.target.name]:e.target.value,
@@ -77,10 +76,10 @@ class Signup extends Component {
             </fieldset>
             <button type="submit">Sign Up!</button>
           </Form>
-        )}
+        )};
       </Mutation>
-    )
-  }
-}
+    );
+  };
+};
 
-export default Signup
+export default Signup;

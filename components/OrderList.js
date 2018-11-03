@@ -9,10 +9,6 @@ import formatMoney from '../lib/formatMoney';
 import OrderItemStyles from './styles/OrderItemStyles';
 import Error from './ErrorMessage';
 
-
-
-
-
 const USER_ORDERS_QUERY = gql`
   query USER_ORDERS_QUERY {
     orders(orderBy: createdAt_DESC) {
@@ -79,7 +75,7 @@ class OrderList extends React.Component {
         }}
       </Query>
     );
-  }
-}
+  };
+};
 
 export default OrderList;

@@ -22,6 +22,7 @@ class DeleteItem extends Component {
     // 3. Put the items back!
     cache.writeQuery({ query: ALL_ITEMS_QUERY, data });
   };
+
   render() {
     return (
       <Mutation
@@ -29,10 +30,10 @@ class DeleteItem extends Component {
         variables={{ id: this.props.id }}
         update={this.update}
       >
-        {(deleteItem, { error }) => (
+        {(deleteItem) => (
           <button
             onClick={() => {
-              if (confirm('Are you sure you want to delete this item?')) {
+              if(confirm('Are you sure you want to delete this item?')) {
                 deleteItem().catch(err => {
                   alert(err.message);
                 });
@@ -44,7 +45,7 @@ class DeleteItem extends Component {
         )}
       </Mutation>
     );
-  }
-}
+  };
+};
 
 export default DeleteItem;

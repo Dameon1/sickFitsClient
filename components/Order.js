@@ -86,7 +86,7 @@ class Order extends Component {
       }}
     </Query>      
     );
-  }
-}
+  };
+};
 
 export default Order;

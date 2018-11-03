@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-
 const AnimationStyles = styled.span`
   position: relative;
   .count {
@@ -41,7 +40,6 @@ const Dot = styled.div`
   font-variant-numeric: tabular-nums;
 `;
 
-
 const CartCount = ({ count }) => (
   <AnimationStyles>
     <TransitionGroup>
@@ -50,6 +48,6 @@ const CartCount = ({ count }) => (
       </CSSTransition>
     </TransitionGroup>
   </AnimationStyles>
-)
+);
 
-export default CartCount
+export default CartCount;

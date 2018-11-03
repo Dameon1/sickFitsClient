@@ -20,12 +20,10 @@ class Reset extends Component {
   static propTypes = {
     resetToken: PropTypes.string.isRequired
   }
-
   state = {
     password: "",
     confirmPassword: "",
   };
-
   saveToState = e => {
     this.setState({
       [e.target.name]:e.target.value,
@@ -73,14 +71,12 @@ class Reset extends Component {
                 />            
               </label>
               <button type="submit">Reset your password!</button>
-            </fieldset>
-            
+            </fieldset>            
           </Form>
         )}
-      </Mutation>
-     
-    )
-  }
-}
+      </Mutation>     
+    );
+  };
+};
 
 export default Reset;

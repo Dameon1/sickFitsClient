@@ -33,7 +33,8 @@ const SINGLE_ITEM_QUERY = gql`
     }
   }
 `;
- class SingleItem extends Component {
+
+class SingleItem extends Component {
   render() {
     return (
       <Query query={SINGLE_ITEM_QUERY} 
@@ -58,10 +59,10 @@ const SINGLE_ITEM_QUERY = gql`
             </div>
           </SingleItemStyles>   
           );    
-      }}        
+        }};
       </Query>
     );
-  }
-}
+  };
+};
 
 export default SingleItem;
