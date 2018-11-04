@@ -11,6 +11,12 @@ const fakeItem = {
   largeImage: 'largedog.jpg',
 };
 
+describe('renders and matches the snapshot', () => {
+  const wrapper = shallow(<ItemComponent item={fakeItem} />);
+  expect(toJSON(wrapper)).toMatchSnapshot();
+})
+
+
 describe('<Item/>', () => {
   it('displays image properly', () => {
     const wrapper = shallow(<ItemComponent item={fakeItem}/>);
