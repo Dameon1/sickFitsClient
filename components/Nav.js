@@ -9,20 +9,20 @@ import CartCount from './CartCount';
 const Nav = () => (
   <User>
     {({data:{ me } }) => (
-      <NavStyles>  
+      <NavStyles data-test="nav">  
         <Link href="/items">
           <a>Shop</a>
         </Link>
         {me && ( 
           <>
             <Link href="/sell">
-              <a>Sell</a>
+              <a>Sell </a>
             </Link>
             <Link href="/orders">
-              <a>Orders</a>
+              <a>Orders </a>
             </Link>
             <Link href="/me">
-              <a>Account</a>
+              <a>Account </a>
             </Link>
             <Signout />
             <Mutation mutation={TOGGLE_CART_MUTATION}>
