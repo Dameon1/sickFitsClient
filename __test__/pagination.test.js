@@ -7,7 +7,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 function makeMockFor(length) {
   return [
     {
-      request: { query: PAGINATION_QUERY, variables: { skip: 0, first: 4 }},
+      request: { query: PAGINATION_QUERY },
       result: {
         data: {
           itemsConnection: {
@@ -30,6 +30,7 @@ describe('<Pagination />', () => {
         <Pagination page={1} />
       </MockedProvider>
     )
+    expect(1).toBe(1);
     expect(1).toBe(1);
     console.log(wrapper.debug());
   })
