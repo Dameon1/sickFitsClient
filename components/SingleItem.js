@@ -9,13 +9,14 @@ const SingleItemStyles = styled.div`
   max-width: 1200px;
   margin: 2rem auto;
   box-shadow: ${props => props.theme.bs};
+  display: grid;
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
   min-height: 800px;
   img {
     width:100%;
     height: 100%;
-    object-fit: containg;
+    object-fit: contain;
   }
   .details {
     margin 3rem;
@@ -55,7 +56,7 @@ class SingleItem extends Component {
             <img src={item.largeImage} alt={item.title} />
             <div className='details'>
               <h2>Viewing {item.title}</h2>
-              <p>{item.descriptioin}</p>
+              <p>{item.description}</p>
             </div>
           </SingleItemStyles>   
           );    
