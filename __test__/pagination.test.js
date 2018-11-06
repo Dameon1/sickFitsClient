@@ -3,6 +3,12 @@ import toJSON from 'enzyme-to-json';
 import wait from 'waait';
 import Pagination, { PAGINATION_QUERY } from '../components/Pagination';
 import { MockedProvider } from 'react-apollo/test-utils';
+import Router from 'next/router';
+
+Router.router = {
+  push () {},
+  prefetch () {}
+}
 
 function makeMockFor(length) {
   return [
@@ -29,10 +35,57 @@ describe('<Pagination />', () => {
       <MockedProvider mocks={makeMockFor(1)}>
         <Pagination page={1} />
       </MockedProvider>
-    )
-    expect(1).toBe(1);
-    expect(1).toBe(1);
-    console.log(wrapper.debug());
-  })
+    );
+    expect(wrapper.text()).toContain('Loading...');
+  });
+
+  it('renders pagination for 18 items', async () => {
+    const wrapper = mount(
+      <MockedProvider mocks={makeMockFor(18)}>
+        <Pagination page={1} />
+      </MockedProvider>
+    );
+    await wait();
+    wrapper.update();
+    expect(wrapper.find('.totalPages').text()).toEqual('5');
+    const pagination = wrapper.find('div[data-test="pagination"]');
+    expect(toJSON(pagination)).toMatchSnapshot();    
+  });
+
+  it('disables prev button on first page', async () => {
+    const wrapper = mount(
+      <MockedProvider mocks={makeMockFor(18)}>
+        <Pagination page={1} />
+      </MockedProvider>
+    );
+    await wait();
+    wrapper.update();
+    expect(wrapper.find('a.prev').prop('aria-disabled')).toEqual(true);
+    expect(wrapper.find('a.next').prop('aria-disabled')).toEqual(false);
+  });
+
+  it('disables next button on last page', async () => {
+    const wrapper = mount(
+      <MockedProvider mocks={makeMockFor(18)}>
+        <Pagination page={5} />
+      </MockedProvider>
+    );
+    await wait();
+    wrapper.update();
+    expect(wrapper.find('a.next').prop('aria-disabled')).toEqual(true);
+    expect(wrapper.find('a.prev').prop('aria-disabled')).toEqual(false);
+  });
+
+  it('enables all buttons on middle page', async () => {
+    const wrapper = mount(
+      <MockedProvider mocks={makeMockFor(18)}>
+        <Pagination page={3} />
+      </MockedProvider>
+    );
+    await wait();
+    wrapper.update();
+    expect(wrapper.find('a.prev').prop('aria-disabled')).toEqual(false);
+    expect(wrapper.find('a.next').prop('aria-disabled')).toEqual(false);
+  });
 })
 
