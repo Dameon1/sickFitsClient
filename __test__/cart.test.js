@@ -13,7 +13,7 @@ const mocks = [
       data: {
         me: {
           ...fakeUser(),
-          cart: [],
+          cart: [fakeCartItem()],
         },
       },
     },
@@ -25,7 +25,7 @@ const mocks = [
 ];
 
 describe('<Cart/>', () => {
-  it('renders and matches snappy', async () => {
+  it('renders and matches snapshot', async () => {
     const wrapper = mount(
       <MockedProvider mocks={mocks}>
         <Cart />
@@ -34,7 +34,7 @@ describe('<Cart/>', () => {
     await wait();
     wrapper.update();
     expect(toJSON(wrapper.find('header'))).toMatchSnapshot();
-    console.log(wrapper.debug());
-    //expect(wrapper.debug());
+    expect(wrapper.find('CartItem')).toHaveLength(1);
+
     });
 });
