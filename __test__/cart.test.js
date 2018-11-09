@@ -35,6 +35,5 @@ describe('<Cart/>', () => {
     wrapper.update();
     expect(toJSON(wrapper.find('header'))).toMatchSnapshot();
     expect(wrapper.find('CartItem')).toHaveLength(1);
-
     });
 });
