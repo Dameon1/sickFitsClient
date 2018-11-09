@@ -16,29 +16,29 @@ const mocks = [
       data: {
         me: {
           ...fakeUser(),
-          cart: [fakeCartItem({ id: 'abc123' })],
+          cart: [fakeCartItem({ id: "omg123"})],
         },
       },
     },
   },
   {
-    request: { query: REMOVE_FROM_CART_MUTATION, variables: { id: 'abc123' } },
+    request: { query: REMOVE_FROM_CART_MUTATION, variables: { id: "omg123" } },
     result: {
       data: {
         removeFromCart: {
           __typename: 'CartItem',
-          id: 'abc123',
+          id: "omg123",
         },
       },
     },
   },
 ];
 
-describe('<RemoveFromCart/>', () => {
+describe.only('<RemoveFromCart/>', () => {
   it('renders and matches snapshot', () => {
     const wrapper = mount(
       <MockedProvider>
-        <RemoveFromCart id="abc123" />
+        <RemoveFromCart id="omg123" />
       </MockedProvider>
     );
     expect(toJSON(wrapper.find('button'))).toMatchSnapshot();
@@ -51,7 +51,7 @@ describe('<RemoveFromCart/>', () => {
         <ApolloConsumer>
           {client => {
             apolloClient = client;
-            return <RemoveFromCart id="abc123" />;
+            return <RemoveFromCart id="omg123" />;
           }}
         </ApolloConsumer>
       </MockedProvider>
