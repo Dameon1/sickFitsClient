@@ -4,7 +4,8 @@ import Header from './Header';
 import Meta from './Meta';
 
 const theme = {
-  red: '#FF0000',
+  green: '#33cc33',
+  red: '#33cc33',
   black: '#393939',
   grey: '#3A3A3A',
   lightgrey: '#E1E1E1',
@@ -45,7 +46,7 @@ injectGlobal`
     line-height: 2;
     font-family: 'radnika_next';
   }
-  a {
+  a {    
     text-decoration: none;
     color: ${theme.black};
   }
