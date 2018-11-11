@@ -89,8 +89,7 @@ class AutoComplete extends React.Component {
                     <DropDownItem>Nothing found for {inputValue}</DropDownItem>
                   )}
                 </DropDown>
-              )};
-                  
+              )}
                 </div>
           )}
         </Downshift>

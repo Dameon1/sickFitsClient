@@ -5,6 +5,8 @@ import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';
+import Router from 'next/router';
+
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -15,6 +17,12 @@ const SIGNIN_MUTATION = gql`
     }
   }
 `;
+
+function routeToHome() {
+  Router.push({
+    pathname: '/',
+    });  
+};
 
 class Signin extends Component {
   state = {
@@ -32,8 +40,10 @@ class Signin extends Component {
         variables={this.state}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
-        {(signup, { error, loading }) => (
-          <Form
+        {(signup, { data, error, loading }) => {
+         if(data){routeToHome()}
+          return (
+            <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault();
@@ -68,7 +78,7 @@ class Signin extends Component {
               <button type="submit">Sign In!</button>
             </fieldset>
           </Form>
-        )}
+        )}}
       </Mutation>
     );
   }
