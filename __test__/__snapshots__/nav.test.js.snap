@@ -2,7 +2,7 @@
 
 exports[`<Nav/> renders full nav when signed in 1`] = `
 <ul
-  className="NavStyles-sc-11c0d2g-0 bvKDBt"
+  className="NavStyles-sc-11c0d2g-0 kqBXGt"
   data-test="nav"
 >
   <Link
@@ -33,16 +33,6 @@ exports[`<Nav/> renders full nav when signed in 1`] = `
       onClick={[Function]}
     >
       Orders 
-    </a>
-  </Link>
-  <Link
-    href="/me"
-  >
-    <a
-      href="/me"
-      onClick={[Function]}
-    >
-      Account 
     </a>
   </Link>
   <Signout>
@@ -445,7 +435,7 @@ exports[`<Nav/> renders full nav when signed in 1`] = `
 
 exports[`<Nav/> renders minimal nav when signed out 1`] = `
 <ul
-  className="NavStyles-sc-11c0d2g-0 bvKDBt"
+  className="NavStyles-sc-11c0d2g-0 kqBXGt"
   data-test="nav"
 >
   <Link
