@@ -1,8 +1,6 @@
 import calcTotalPrice from '../lib/calcTotalPrice';
 import {fakeCartItem} from '../lib/testUtils';
 
-console.log([fakeCartItem()])
-
 describe('calculates total price', () => {
   it('returns zero with no cart item', () => {
     expect(calcTotalPrice([])).toEqual(0);
