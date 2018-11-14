@@ -11,6 +11,5 @@ describe('<DisplayError/>', () => {
     await wait();
     wrapper.update(); 
     expect(toJSON(wrapper)).toMatchSnapshot();
-    console.log(wrapper.debug());
   })
 })

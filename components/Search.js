@@ -36,7 +36,6 @@ class AutoComplete extends React.Component {
     loading: false,
   }
   onChange = debounce(async (e, client) => {
-    console.log('searching')
     this.setState({
       loading:true
     })
@@ -48,7 +47,6 @@ class AutoComplete extends React.Component {
       items: res.data.items,
       loading: false,
     })
-    console.log(res);
   }, 400)
 
   render() {
