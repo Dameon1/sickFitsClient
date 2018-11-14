@@ -34,7 +34,7 @@ const mocks = [
   },
 ];
 
-describe.only('<RemoveFromCart/>', () => {
+describe('<RemoveFromCart/>', () => {
   it('renders and matches snapshot', () => {
     const wrapper = mount(
       <MockedProvider>
