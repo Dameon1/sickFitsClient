@@ -2,9 +2,3 @@
 export const endpoint = `http://localhost:4444`;
 export const prodEndpoint = 'https://sickfits-production.herokuapp.com/';
 export const perPage = 4;
-const debug = process.env.NODE_ENV !== 'production';
-const assetPrefix = debug ? '' : 'https://www.dameonmendoza.com/sickFitsClient/';
-
-module.exports = {
-  assetPrefix
-};
