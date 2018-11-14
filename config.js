@@ -6,3 +6,9 @@ export const perPage = 4;
 module.exports = {
   assetPrefix: process.env.NODE_ENV === 'production' ? `/somewhere` : '',
 }
+const debug = process.env.NODE_ENV !== 'production';
+const assetPrefix = debug ? '' : '/sickFitsClient/';
+
+module.exports = {
+  assetPrefix
+};
