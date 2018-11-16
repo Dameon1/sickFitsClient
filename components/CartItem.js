@@ -28,7 +28,7 @@ const CartItem = ({ cartItem }) => {
     );
   return ( 
     <CartItemStyles>
-      <img  width="50" src={cartItem.item.image} alt={cartItem.item.title} />
+      <img   src={cartItem.item.image} alt={cartItem.item.title} />
       <div className="cart-item-detaitls">
         <h3>{cartItem.item.title}</h3>
         <p>
