@@ -2,7 +2,7 @@
 
 ## Application details
 
-  Sick Fits is an application where users can buy
+  Sick Fits is an application where users can buy and sell items. Users can upload a picture, set a price, and add a description to the product. There is a cart for users to store items to purchase. Sick Fits uses Stripe to process orders.
 
 ## Where to find
 
@@ -10,12 +10,14 @@ You can visit  [Sick Fits here](https://sickfitsnext-production.herokuapp.com/) 
 
 ## Instructions
 
+Users can view products by simply visiting the page or create an account to be able to purchase and post new products.
 
 ## Coding styles
 
+This is a Next.js project that uses GraphQL and Apollo client
 
 ## Screenshots
-
+- **TODO**
 <!-- - Mobile screenshots on the left and right
 - On the left you will find what single recipe search will provide you
 - On the right is the "search for" screen, where you can add and pick from options
@@ -34,8 +36,15 @@ change and make a pull request. I styled this app with the simplest of styles.
 
 ## Built With
 
-- [React](https://github.com/gitname/react-gh-pages) - The web framework used
-- [Enzyme](https://airbnb.io/enzyme) - Testing framework
+
+- [React](https://github.com/gitname/react-gh-pages) - The Javascript library used.
+- [Next](https://nextjs.org/) - A React framework.
+- [GraphQl](https://graphql.org/) - API query language used.
+- [Apollo](https://www.apollographql.com/) - State management.
+- [Stripe](https://stripe.com/) - Payment processing.
+- [Enzyme](https://airbnb.io/enzyme) - Testing framework.
+- [Jest](https://jestjs.io/en/) - Assertion Testing.
+
 <!-- TODO
   add NEXT.js
   add Jest
