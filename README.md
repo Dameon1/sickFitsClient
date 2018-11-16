@@ -1,7 +1,5 @@
 # SickFits Client
 
-# what2eat
-
 ## Application details
 
 
