@@ -2,6 +2,7 @@
 
 ## Application details
 
+  Sick Fits is an application where users can buy
 
 ## Where to find
 
@@ -40,6 +41,7 @@ change and make a pull request. I styled this app with the simplest of styles.
   add Jest
   add GraphQl
   add Apollo
+  add Stripe
  -->
 ## Authors
 
