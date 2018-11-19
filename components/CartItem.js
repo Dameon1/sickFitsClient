@@ -12,6 +12,7 @@ const CartItemStyles = styled.li`
   grid-template-columns: auto 1fr auto;
   img {
     margin-right: 10px;
+    width:40%;
   }
   h3,p {
     margin: 0;
@@ -28,7 +29,7 @@ const CartItem = ({ cartItem }) => {
     );
   return ( 
     <CartItemStyles>
-      <img   src={cartItem.item.image} alt={cartItem.item.title} />
+      <img src={cartItem.item.image} alt={cartItem.item.title} />
       <div className="cart-item-detaitls">
         <h3>{cartItem.item.title}</h3>
         <p>

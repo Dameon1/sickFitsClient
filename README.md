@@ -45,13 +45,6 @@ change and make a pull request. I styled this app with the simplest of styles.
 - [Enzyme](https://airbnb.io/enzyme) - Testing framework.
 - [Jest](https://jestjs.io/en/) - Assertion Testing.
 
-<!-- TODO
-  add NEXT.js
-  add Jest
-  add GraphQl
-  add Apollo
-  add Stripe
- -->
 ## Authors
 
 - **Dameon Mendoza** - *Initial work* - [dameon1](https://github.com/dameon1)
