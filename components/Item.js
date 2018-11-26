@@ -30,9 +30,6 @@ export default class Item extends Component {
         <p>{item.description}</p>
         <div className="buttonList">
         {me && me.id !== item.user.id && <AddToCart id={item.id}/> }
-        {console.log(item)}
-        {console.log(me)}
-        
         {me && me.id === item.user.id && <Link href={{ pathname: 'update', query: { id: item.id }, }}>
                 <a>Edit ✏️</a>
               </Link>}         

@@ -15,6 +15,12 @@ const SIGNUP_MUTATION = gql`
   }
 `;
 
+function routeToHome() {
+  Router.push({
+    pathname: '/',
+    });  
+};
+
 class Signup extends Component {
   state = {
     name: '',
@@ -31,7 +37,9 @@ class Signup extends Component {
         variables={this.state}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
-         {(signup, { error, loading }) => (
+         {(signup, { data, error, loading }) => {
+           if(data){routeToHome()}
+           return (
           <Form
             method="post"
             onSubmit={async e => {
@@ -76,7 +84,7 @@ class Signup extends Component {
               <button type="submit">Sign Up!</button>
             </fieldset>
           </Form>
-        )}
+        )}}
       </Mutation>
     );
   }
