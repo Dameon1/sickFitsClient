@@ -20,7 +20,7 @@ export default class AddToCart extends React.Component {
                 variables={{ id }}
                 refetchQueries={[{ query: CURRENT_USER_QUERY}]}>
         {(addToCart, {loading}) => 
-          <button diabled={`${loading}`}  onClick={addToCart}>Add{loading && 'ing'} To Cart</button> }
+          <button disabled={loading}  onClick={addToCart}>Add{loading && 'ing'} To Cart</button> }
       </Mutation>
     );
   };

@@ -45,10 +45,12 @@ injectGlobal`
     line-height: 2;
     font-family: 'radnika_next';
   }
-  a {    
+  a {
+    cursor: hand;    
     text-decoration: none;
     color: ${theme.black};
   }
+
 `;
 
 class Page extends Component {

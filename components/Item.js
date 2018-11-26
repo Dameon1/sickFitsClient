@@ -7,6 +7,7 @@ import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import DeleteItem from './DeleteItem';
 import AddToCart from './AddToCart';
+import User from './User';
 
 export default class Item extends Component {
   static propTypes = {
@@ -16,7 +17,9 @@ export default class Item extends Component {
   render() {
     const { item } = this.props;
     return (
-      <ItemStyles>
+      <User>
+      {({data:{ me } }) => (
+        <ItemStyles>
         {item.image && <img src={item.image} alt={item.title} />}
         <Title>
           <Link href={{ pathname: '/item', query: { id: item.id }, }}>
@@ -26,13 +29,18 @@ export default class Item extends Component {
         <PriceTag>{ formatMoney(item.price) }</PriceTag>
         <p>{item.description}</p>
         <div className="buttonList">
-          <Link href={{ pathname: 'update', query: { id: item.id }, }}>
-            <a>Edit ✏️</a>
-          </Link>
-          <AddToCart id={item.id}/>
-          <DeleteItem id={item.id}>Delete this Item!</DeleteItem>
+        {me && me.id !== item.user.id && <AddToCart id={item.id}/> }
+        {console.log(item)}
+        {console.log(me)}
+        
+        {me && me.id === item.user.id && <Link href={{ pathname: 'update', query: { id: item.id }, }}>
+                <a>Edit ✏️</a>
+              </Link>}         
+        {me && me.id === item.user.id && <DeleteItem id={item.id}>Delete this Item!</DeleteItem>}
         </div>
       </ItemStyles>
-    );
+      )}
+      </User>
+      );
   }
 }
