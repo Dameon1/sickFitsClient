@@ -4,7 +4,7 @@
 // import { MockedProvider } from 'react-apollo/test-utils';
 // import Order, { SINGLE_ORDER_QUERY } from '../components/Order';
 // import { fakeOrder } from '../lib/testUtils';
-
+import {mount} from 'enzyme';
 // const mocks = [
 //   {
 //     request: { query: SINGLE_ORDER_QUERY, variables: { id: 'ord123'} },
@@ -15,7 +15,11 @@
 //     },
 //   },  
 // ];
-
+describe('testing', () => {
+  it('should be true', () => {
+    expect(true).toBe(true);
+  })
+})
 
 // describe('<Order/>', () => {
 //   it('renders and matches snapshot', async () => {
