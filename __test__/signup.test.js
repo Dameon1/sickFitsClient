@@ -73,7 +73,7 @@ describe('<Signup/>', () => {
     type(wrapper, 'email', me.email);
     type(wrapper, 'password', 'password');
     wrapper.update();
-    wrapper.find('form').simulate('submit');
+    //wrapper.find('form').simulate('submit');
     await wait();
     //query user out of apollo client
   const user = await apolloClient.query({ query: CURRENT_USER_QUERY });

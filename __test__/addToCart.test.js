@@ -34,7 +34,7 @@ const mocks = [
       data: {
         addToCart: {
           ...fakeCartItem(),
-          quantity: 1,
+          quantity: 3,
         }
       }
     }

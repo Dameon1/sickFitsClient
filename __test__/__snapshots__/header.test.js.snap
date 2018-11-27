@@ -243,7 +243,7 @@ exports[`<Header/> renders and matches snapshot 1`] = `
           data-test="nav"
         >
           <ul
-            className="NavStyles-sc-11c0d2g-0 kqBXGt"
+            className="NavStyles-sc-11c0d2g-0 bvKDBt"
             data-test="nav"
           >
             <Link

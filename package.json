@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "test-unix": "NODE_ENV=test jest",
-    "test": "SET NODE_ENV=test&& jest --watch",
+    "test": "SET NODE_ENV=test&& jest",
     "heroku-postbuild": "next build"
   },
   "author": "",

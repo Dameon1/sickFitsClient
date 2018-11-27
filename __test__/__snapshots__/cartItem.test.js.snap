@@ -33,12 +33,11 @@ exports[`<CartItem/> renders and matches snapshot 1`] = `
 >
   <CartItem__CartItemStyles>
     <li
-      className="CartItem__CartItemStyles-sc-1rm9l7o-0 iguiiv"
+      className="CartItem__CartItemStyles-sc-1rm9l7o-0 hQBQSZ"
     >
       <img
         alt="dogs are best"
         src="dog-small.jpg"
-        width="50"
       />
       <div
         className="cart-item-detaitls"
