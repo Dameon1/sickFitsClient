@@ -1,3 +1,6 @@
+
+[![CircleCI](https://circleci.com/gh/Dameon1/sickFitsClient.svg?style=svg)](https://circleci.com/gh/Dameon1/sickFitsClient)
+
 # SickFits Client
 
 ## Application details
