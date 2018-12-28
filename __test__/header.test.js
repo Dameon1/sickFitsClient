@@ -11,14 +11,3 @@ describe('testing', () => {
     expect(true).toBe(true);
   })
 })
-
-// describe('<Header/>', () => {
-//   it('renders and matches snapshot', () => {
-//     const wrapper = mount(
-//       <MockedProvider>
-//         <Header />
-//       </MockedProvider>
-//     );
-//     expect(toJSON(wrapper.find('div[className="bar"]'))).toMatchSnapshot();
-//   })
-// })
