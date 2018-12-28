@@ -50,7 +50,4 @@ describe('<RequestReset/>', () => {
     wrapper.update();
     expect(wrapper.find('p').text()).toContain('Success!');
   });
-});
-
-
- 
+}); 

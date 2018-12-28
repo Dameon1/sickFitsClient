@@ -12,4 +12,4 @@ describe('<DisplayError/>', () => {
     wrapper.update(); 
     expect(toJSON(wrapper)).toMatchSnapshot();
   })
-})
+});

@@ -4,8 +4,7 @@ describe('formatMoney Function', () => {
   it('returns a string', () => {
     expect(formatMoney(1)).toEqual(expect.stringContaining(''));
     expect(formatMoney(1)).toEqual(expect.stringContaining('$'));
-  })
-
+  });
 
   it('works with fractional dollars', () => {
     expect(formatMoney(1)).toEqual('$0.01');
@@ -22,6 +21,5 @@ describe('formatMoney Function', () => {
   it('works with whole and fractional dollars', () => {
     expect(formatMoney(123)).toEqual('$1.23');
     expect(formatMoney(123456789)).toEqual('$1,234,567.89');
-  })
+  });
 });
-

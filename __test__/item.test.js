@@ -24,7 +24,7 @@ describe('<Item/>', () => {
     const img = wrapper.find('img');
     //expect(img.props().src).toBe(fakeItem.image);
     //expect(img.props().alt).toBe(fakeItem.title);
-    console.log(wrapper.debug());
+    console.log(img.debug());
   })
   it('renders and displays properly', () => {
     const wrapper = shallow(<ItemComponent item={fakeItem}/>);

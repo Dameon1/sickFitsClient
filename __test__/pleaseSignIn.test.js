@@ -47,11 +47,5 @@ describe('<PleaseSignIn />', async () => {
     expect(wrapper.find('FakeComp').exists()).toBe(true);
     expect(wrapper.contains(<FakeComp />)).toBe(true);
     expect(wrapper.find('Signin').exists()).toBe(false);
-    console.log(wrapper.debug());
   })
-})
-
-
-
-
-
+});

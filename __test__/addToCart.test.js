@@ -89,4 +89,4 @@ describe('<AddToCart />', () => {
     wrapper.find('button').simulate('click');
     expect(wrapper.text()).toContain('Adding To Cart');
   })
-})
+});

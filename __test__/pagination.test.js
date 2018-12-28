@@ -87,5 +87,4 @@ describe('<Pagination />', () => {
     expect(wrapper.find('a.prev').prop('aria-disabled')).toEqual(false);
     expect(wrapper.find('a.next').prop('aria-disabled')).toEqual(false);
   });
-})
-
+});

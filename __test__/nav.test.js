@@ -30,7 +30,6 @@ const signedInMocksWithCartItems = [
   },
 ];
 
-
 describe('<Nav/>', () => {
   it('renders minimal nav when signed out', async () => {
     const wrapper = mount(
@@ -42,7 +41,6 @@ describe('<Nav/>', () => {
     wrapper.update();
     const nav = wrapper.find('ul[data-test="nav"]');
     expect(toJSON(nav)).toMatchSnapshot();
-    console.log(nav.debug());
   });
   it('renders full nav when signed in', async () => {
     const wrapper = mount(
